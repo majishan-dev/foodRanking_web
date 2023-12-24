@@ -11,22 +11,23 @@ body {
 
 header {
   width: 100%;
-  padding: 30px 4% 10px;
-  background-color: #fff;
+  padding: 30px 1% 10px;
+  background-color: #3d3e54;
   display: flex;
   align-items: center;
 }
 
-h1#header {
+h1.header {
   margin: 0; padding: 0;
   font-size: 20px;
 }
 
 a#header {
   text-decoration: none;
-  color: #4b4b4b;
+  color: whitesmoke;
   text-align: center;
   display: flex;
+  align-items: center;
 }
 
 div#title {
@@ -59,7 +60,7 @@ li.menu-item {
   vertical-align: middle;
 }
 a.menu-link {
-  color: #4b4b4b;
+  color: whitesmoke;
   display: block;
   text-align: center;
   line-height: 40px;
@@ -72,7 +73,7 @@ ul.menu-sub {
   list-style: none;
   position: absolute;
   top: 100%;
-  left: -1px;
+  /* left: -1px; */
   margin: 0;
   padding: 0;
   border-top: none;
@@ -80,19 +81,19 @@ ul.menu-sub {
 }
 
 li.menu-sub-item {
-  background: #fff;
+  background: gray;
   transition: all .1s ease;
 }
 ul.header-dropmenu > li:hover {
-  background: #fff;
+  background: #808080;
   border-bottom: none;
 }
 li.menu-sub-item:hover {
-  background: #f8f8f8;
+  background: #5c5c5c;
 }
 
 a.menu-sub-link {
-  color: #4b4b4b;
+  color: whitesmoke;
   display: block;
   text-align: center;
   line-height: 40px;

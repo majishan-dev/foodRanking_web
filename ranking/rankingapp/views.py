@@ -4,9 +4,11 @@ from .models import RankingModel
 
 # Create your views here.
 
-class TodoList(ListView):
-    template_name = 'list.html'
-    model = RankingModel
+#classbasedよりはfunctionbasedの方がよいとおもっているが認識合う？
+
+def TodoList(request):
+    range_list = range(2)
+    return render(request, 'list.html', {'range_list': range_list})
 
 class RankingHome(TemplateView):
     template_name = 'home.html'

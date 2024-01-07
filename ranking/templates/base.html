@@ -9,6 +9,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'styles/header.css' %}" />
     <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+
+    <!-- 各html extendする側のheadコンテンツ -->
+    {% block head %}
+    {% endblock head %}
+
+
     <script src="{% static 'scripts/header.js' %}"></script>
   </head>
   <body>

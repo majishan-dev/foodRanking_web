@@ -15,6 +15,7 @@ header {
   background-color: #3d3e54;
   display: flex;
   align-items: center;
+  z-index: 10000;
 }
 
 h1.header {

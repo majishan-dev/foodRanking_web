@@ -11,4 +11,5 @@ div#bar {
 
 div#contest {
 	margin: 3% 3%;
+	z-index: 1;
 }

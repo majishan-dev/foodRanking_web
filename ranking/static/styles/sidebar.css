@@ -1,4 +1,8 @@
 div#sidebar {
 	width: 100px;
+    height: 2000px;
 	background-color: gray;
+    padding-bottom: 32768px;
+    margin-bottom: -32768px;
+    min-height: 100vh;
 }

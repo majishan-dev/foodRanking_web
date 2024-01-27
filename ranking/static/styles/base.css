@@ -1,11 +1,12 @@
 div#main {
 	display: flex;
-	height: 1000px;
 	background-color: #f2f2f2a7;
+	overflow:hidden;
 }
 
 
 div#contest {
 	margin: 3% 3%;
+	position: relative;
 	z-index: 1;
 }

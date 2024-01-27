@@ -20,7 +20,7 @@ class RankingList(ListView):
 def RankList(request):
     object_list = RankingModel.objects.all()
     print(object_list)
-    return render(request, "list.html", {"object_list": object_list})
+    return render(request, "rankinglist.html", {"object_list": object_list})
 
 
 class RankingHome(TemplateView):

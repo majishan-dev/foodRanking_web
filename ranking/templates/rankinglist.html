@@ -15,7 +15,7 @@
 {% block content %}
 <div class="container mt-5">
 
-    <h2 class="mb-4">レストランランキングAAAAAAAAAAAAAAAAAAAAAAAA</h2>
+    <h2 class="mb-4">レストランランキング</h2>
 
     <!-- オブジェクトで呼び出し、for文で複数表示 -->
     {% for item in object_list %}
@@ -28,7 +28,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{item.shop_name}}</h5>
                     <p class="card-text">溜池山王 / 和食</p>
-                    <p class="card-text"><small class="text-muted">住所: 東京都...</small></p>
+                    <p class="card-text"><small class="text-muted">住所:{{item.shop_location}}</small></p>
+                    <p class="card-text"><small class="text-muted">営業時間:{{item.buisiness_hours}}</small></p>
                     <div class="rating-stars mb-2">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>

@@ -12,5 +12,5 @@ class RankingModel(models.Model):
     # shop_type_id = models.CharField(max_length=10, blank=True, null=True) #後で外部キーに変更
     # 例models.ForeignKey(Category, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    #     return self.shop_name
+    def __str__(self):
+        return self.shop_name

@@ -5,7 +5,7 @@ from django.db import models
 class RankingModel(models.Model):
     shop_name = models.CharField(max_length=100)
     shop_location = models.CharField(max_length=100)
-    # shop_image = models.ImageField(upload_to='images/')
+    shop_image = models.ImageField(upload_to="images/")
     buisiness_hours = models.CharField(max_length=100)
     created_data = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True, blank=True, null=True)

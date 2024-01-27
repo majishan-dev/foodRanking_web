@@ -3,55 +3,69 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'styles/list.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/rankinglist.css' %}" />
+<script src="{% static 'scripts/paginathing.js' %}"></script>
+<script src="{% static 'scripts/rankinglist.js' %}"></script>
 <!-- FontAwesomeのCSS（星のアイコン用） -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 {% endblock head %}
 
 
 {% block header %}
-
 {% endblock header %}
 
 {% block content %}
+
+
 <div class="container mt-5">
 
     <h2 class="mb-4">レストランランキング</h2>
+    
+    {% for item in object_list %}
+
+    {% endfor %}
 
     <!-- オブジェクトで呼び出し、for文で複数表示 -->
-    {% for item in object_list %}
-    <div class="card mb-3 store-card z-n1">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <!-- <img src="{% static 'pictures/shop.jpg' %}" class="store-image" alt="レストランの画像"> -->
-                <img src='{{ MEDIA_URL }}{{item.shop_image.url}}' width=200>
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{item.shop_name}}</h5>
-                    <p class="card-text">溜池山王 / 和食</p>
-                    <p class="card-text"><small class="text-muted">住所:{{item.shop_location}}</small></p>
-                    <p class="card-text"><small class="text-muted">営業時間:{{item.buisiness_hours}}</small></p>
-                    <div class="rating-stars mb-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> <!-- ★の記載を自動化する必要あり -->
-                        <span class="ml-2">4.00</span>
-                        <span class="ml-2">(721)</span>
-                        <span class="ml-2">84592ビュー</span>
+    <div class="items">
+        {% for item in object_list %}
+            <dl>
+                <div class="card mb-3 store-card z-n1">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <!-- <img src="{% static 'pictures/shop.jpg' %}" class="store-image" alt="レストランの画像"> -->
+                            <img src='{{ MEDIA_URL }}{{item.shop_image.url}}' width=200>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.shop_name}}</h5>
+                                <p class="card-text">溜池山王 / 和食</p>
+                                <p class="card-text"><small class="text-muted">住所:{{item.shop_location}}</small></p>
+                                <p class="card-text"><small class="text-muted">営業時間:{{item.buisiness_hours}}</small></p>
+                                <div class="rating-stars mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i> <!-- ★の記載を自動化する必要あり -->
+                                    <span class="ml-2">4.00</span>
+                                    <span class="ml-2">(721)</span>
+                                    <span class="ml-2">84592ビュー</span>
+                                </div>
+                                <p class="card-text">￥30,000〜￥39,999</p>
+                                <p class="review-quote">レビュー表示欄（例：おいしかったです）</p>
+                                <p class="user-review">レビュー記入者（例：id0001</p>
+                                <p class="card-text"><small class="text-muted">作成日:{{item.created_data | date:'y/m/d' }}　更新日:{{item.modified_date | date:'y/m/d' }}</small></p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="card-text">￥30,000〜￥39,999</p>
-                    <p class="review-quote">レビュー表示欄（例：おいしかったです）</p>
-                    <p class="user-review">レビュー記入者（例：id0001</p>
-                    <p class="card-text"><small class="text-muted">作成日:{{item.created_data | date:'y/m/d' }}　更新日:{{item.modified_date | date:'y/m/d' }}</small></p>
                 </div>
-            </div>
-        </div>
+            </dl>
+        {% endfor %}
     </div>
-    {% endfor %}
 
     <!-- 他のレストランのカードをここに追加 -->
 
 </div>
+
+
 {% endblock content %}

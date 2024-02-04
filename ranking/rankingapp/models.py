@@ -14,3 +14,11 @@ class RankingModel(models.Model):
 
     def __str__(self):
         return self.shop_name
+
+
+class InstaModel(models.Model):
+    title = models.CharField(max_length=100)
+    shop_image = models.ImageField(upload_to="images/")
+
+    def __str__(self):
+        return self.title

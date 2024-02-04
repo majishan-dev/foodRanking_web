@@ -28,7 +28,7 @@ def get_ig_hash_id(business_id, hash_tag_name, access_token):
 
 def search_top_hash_tag_posts(business_id, hash_tag_id, access_token):
     """指定したハッシュタグIDのトップ投稿を検索する。"""
-    url = f"https://graph.facebook.com/{hash_tag_id}/recent_media?user_id={business_id}&fields=caption,comments_count,id,like_count,media_type,media_url,permalink,timestamp,children%7Bmedia_url%7D&access_token={access_token}"
+    url = f"https://graph.facebook.com/{hash_tag_id}/recent_media?user_id={business_id}&fields=caption,comments_count,id,like_count,media_type,media_url,permalink,timestamp,children%7Bmedia_url%7D&access_token={access_token}&limit=10"
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -41,6 +41,18 @@ def search_top_hash_tag_posts(business_id, hash_tag_id, access_token):
     except Exception as error:
         print("Instagram APIのリクエスト中にエラーが発生しました:", error)
     return None
+
+
+def post(post_hashtag):
+    settings = load_settings("auth.json")
+    hash_tag_name = post_hashtag
+    insta_business_id = settings["insta_business_id"]
+    access_token = settings["access_token"]
+
+    hash_tag_id = get_ig_hash_id(insta_business_id, hash_tag_name, access_token)
+    if hash_tag_id:
+        data = search_top_hash_tag_posts(insta_business_id, hash_tag_id, access_token)
+        return data
 
 
 def main():

@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/list.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/rankinglist.css' %}" />
+<script src="{% static 'scripts/paginathing.js' %}"></script>
+<script src="{% static 'scripts/rankinglist.js' %}"></script>
+<!-- FontAwesomeのCSS（星のアイコン用） -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+{% endblock head %}
+
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+
+    <h2 class="mb-4">レストランランキング</h2>
+    
+    {% for item in object_list %}
+
+    {% endfor %}
+
+    <!-- オブジェクトで呼び出し、for文で複数表示 -->
+    <div class="items">
+        {% for item in object_list %}
+            <dl>
+                <div class="card mb-3 store-card z-n1">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <!-- <img src="{% static 'pictures/shop.jpg' %}" class="store-image" alt="レストランの画像"> -->
+                            <img src='{{ MEDIA_URL }}{{item.shop_image.url}}' width=200>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.title}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </dl>
+        {% endfor %}
+    </div>
+
+    <!-- 他のレストランのカードをここに追加 -->
+
+</div>
+
+
+{% endblock content %}

@@ -8,6 +8,7 @@ from .views import (
     InstaGetAPI,
     InstaList,
     InstaFormAPI,
+    HotPepperList,
 )
 
 urlpatterns = [
@@ -19,4 +20,5 @@ urlpatterns = [
     path("insta_api/", InstaFormAPI, name="insta"),
     path("insta_list/", InstaList, name="instalist"),
     path("get_insta_api/", InstaGetAPI, name="getinsta"),
+    path("hotpepper_list/", HotPepperList, name="hotpepperlist"),
 ]

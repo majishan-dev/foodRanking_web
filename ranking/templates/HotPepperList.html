@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/list.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/hotpepperlist.css' %}" />
+<script src="{% static 'scripts/paginathing.js' %}"></script>
+<!-- FontAwesomeのCSS（星のアイコン用） -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+{% endblock head %}
+
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+<h2 class="mb-4">レストランリスト</h2>
+<div id="split_page">
+    <div id="hotpepper_list">
+        hotpepper list
+        <div style="width: 100%; height: 300px; overflow-y: scroll; border: 1px #999 solid;">
+            <ul>
+                {% for item in respons %}
+                    <li>
+                        <p id="{{item.name}}">{{item.name}}</p>
+                        <button type="button" class="show-detail"><img src='{{item.image}}'></button>
+                        <!-- <br> -->
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div>
+        google map
+        <div id="googlemap">
+            <iframe frameborder="0" style="border:0; width: 100%; height: 50vh" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD7R7z7uHNUjTrOPpyaZo9GZ2QlQO1kuXQ&q=ドコモ"allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<a href="http://webservice.recruit.co.jp/"><img src="http://webservice.recruit.co.jp/banner/hotpepper-s.gif" alt="ホットペッパーグルメ Webサービス" width="135" height="17" border="0" title="ホットペッパーグルメ Webサービス"></a>
+
+<script>
+$(document).ready(() => {
+    $('.show-detail').on('click', function() {
+        const element = $(this).parent().text();
+        // 要素の詳細を表示する処理
+        alert(element);
+    });
+});
+</script>
+
+{% endblock content %}

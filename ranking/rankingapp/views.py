@@ -75,6 +75,25 @@ class RankingHome(TemplateView):
     template_name = "home.html"
 
 
+def HotPepperList(request):
+    word = "東京駅"
+    respons = get_hotpepperlist(word)
+    respons_shop = respons.json()["results"]["shop"]
+    shoplist = []
+    for i in respons_shop:
+        shoplist.append({"name": i["name"], "image": i["logo_image"]})
+    # print(shoplist)
+    return render(request, "HotPepperList.html", {"respons": shoplist})
+
+
+def get_hotpepperlist(word):
+    url = f"http://webservice.recruit.co.jp/hotpepper/gourmet/v1/"
+    API_key = "dbe4e5730a0f5678"
+    body = {"key": API_key, "keyword": word, "format": "json", "count": 20}
+    respons = requests.get(url, body)
+    return respons
+
+
 # ここから下はインスタグラムのAPIからデータを取ってくる部分
 def load_settings(file_name):
     """設定ファイルを読み込んで辞書として返す。"""

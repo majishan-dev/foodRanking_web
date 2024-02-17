@@ -1,0 +1,17 @@
+div#split_page{
+    display: flex;
+}
+
+div#hotpepper_list{
+    padding: 5px;
+    width: 50%;
+}
+
+div#googlemap{
+    width: 100%;
+}
+
+p{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}

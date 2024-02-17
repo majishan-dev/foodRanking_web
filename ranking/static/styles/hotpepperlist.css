@@ -1,10 +1,11 @@
 div#split_page{
     display: flex;
+    width: 100%;
 }
 
 div#hotpepper_list{
     padding: 5px;
-    width: 50%;
+    width: 100%;
 }
 
 div#googlemap{

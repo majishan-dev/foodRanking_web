@@ -21,4 +21,5 @@ urlpatterns = [
     path("insta_list/", InstaList, name="instalist"),
     path("get_insta_api/", InstaGetAPI, name="getinsta"),
     path("hotpepper_list/", HotPepperList, name="hotpepperlist"),
+    path("/", RankingHome.as_view(), name="home"),
 ]

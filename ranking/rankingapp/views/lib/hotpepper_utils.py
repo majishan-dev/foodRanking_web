@@ -10,4 +10,3 @@ def get_hotpepperlist(word):
     body = {"key": API_key, "keyword": word, "format": "json", "count": 20}
     respons = requests.get(url, body)
     return respons
-

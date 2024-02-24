@@ -1,0 +1,158 @@
+{% load static %}
+<!doctype html>
+<html lang="jp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FoodRanking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static 'styles/header.css' %}" />
+  <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+  <link rel="stylesheet" href="{% static 'styles/sidebar.css' %}" />
+  <link rel="stylesheet" href="{% static 'styles/footer.css' %}" />
+
+  <!-- 各html extendする側のheadコンテンツ -->
+  {% block head %}
+  {% endblock head %}
+
+
+  <script src="{% static 'scripts/header.js' %}"></script>
+</head>
+
+<body>
+  <div>
+    <div>
+      <header>
+        <a id="header" href="/home">
+          <div>
+            <img src="{% static 'pictures/icon_ranking.png' %}" width="100" height="90" alt="">
+          </div>
+          <div id="title">
+            <div>
+              <h1 class="header">グルメ</h1>
+            </div>
+            <div>
+              <h1 class="header">ランキング</h1>
+            </div>
+          </div>
+          </h1>
+          <nav>
+            <!-- ヘッダーのドロップメニュー -->
+            <ul class="header-dropmenu">
+              <li class="menu-item">
+                <a class="menu-link" href="#">北海道</a>
+                <ul class="menu-sub">
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">北海道</a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">東北</a>
+                <ul class="menu-sub">
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="/insta_api">青森</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="/insta_list">岩手</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">宮城</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">秋田</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">山形</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">福島</a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">関東</a>
+                <ul class="menu-sub">
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">茨城</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">栃木</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">群馬</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">埼玉</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="/list_test_func">千葉</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="/list">東京</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="/list_test">神奈川</a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">中部</a>
+                <ul class="menu-sub">
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="/hotpepper_list">新潟</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">富山</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">石川</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">福井</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">山梨</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">長野</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">岐阜</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">静岡</a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#">愛知</a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">近畿</a>
+                <ul class="menu-sub">
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">中国</a>
+                <ul class="menu-sub">
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">四国</a>
+                <ul class="menu-sub">
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">九州</a>
+                <ul class="menu-sub">
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                  <li class="menu-sub-item"><a class="menu-sub-link" href="#"></a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a class="menu-link" href="#">お問合せ</a>
+              </li>
+            </ul>
+          </nav>
+      </header>
+    </div>
+    <div id="main">
+
+      <div id="sidebar">
+        
+      </div>
+      <div id="content">
+        {% block content %}
+
+        {% endblock content %}
+      </div>
+    </div>
+    <footer>
+      <div id="footer">
+
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

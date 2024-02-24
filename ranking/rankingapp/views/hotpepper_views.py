@@ -8,7 +8,9 @@ import os
 
 
 def HotPepperList(request):
-    word = "東京駅"
+    text = request.GET.get("query","")
+    word = text.replace("　"," ")
+    
     respons = get_hotpepperlist(word)
     respons_shop = respons.json()["results"]["shop"]
     shoplist = []

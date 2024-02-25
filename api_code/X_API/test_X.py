@@ -1,10 +1,10 @@
 import tweepy
 
 # APIキーとアクセストークンの設定
-api_key = "dacvLO8mPZm5GkKAhwmg4fk2M"
-api_key_secret = "rmkOggB1CNFeJOllkweVQx11mgPgneMuiQh8uSEhLEdUIf4xpM"
-access_token = "849501462011023360-2sVFHcjhSPQdICYOqJtrMhrm5k2YnW9"
-access_token_secret = "jMA1Lp9ZOws4bbbGXzqkEdQnBxAOkBPaI72hwK5SPrHa0"
+api_key = "XXX"
+api_key_secret = "XXX"
+access_token = "XXX"
+access_token_secret = "XXX"
 
 client = tweepy.Client(
     consumer_key=api_key,

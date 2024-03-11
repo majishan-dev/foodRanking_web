@@ -33,7 +33,7 @@ SECRET_KEY = "django-insecure-4gwqy1n6_p+2+$0dwx*1f3fcs#$*h(z=ak&m%e%d+mrk4e*5jr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'foodranking-web.onrender.com']
 
 
 # Application definition

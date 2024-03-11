@@ -17,6 +17,6 @@ RUN pip install -r requirements.txt
 COPY ./ranking /app/
 
 # Djangoの開発サーバーを起動
-CMD python manage.py runserver 0.0.0.0:8000
+CMD python manage.py runserver 0.0.0.0:$PORT
 
 
